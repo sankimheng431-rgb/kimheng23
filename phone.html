@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="km">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>HENGSHOP | ហាងទូរស័ព្ទឆ្លាតវៃ & គ្រឿងបន្លាស់ដើម</title>
+    <meta name="description"
+        content="ទូរស័ព្ទឆ្លាតវៃលំដាប់ខ្ពស់ គ្រឿងបន្លាស់ដើម និងសេវាកំណត់ម៉ូដែលផ្ទាល់ខ្លួន។ ធានាដើម ១០០% ដឹកជញ្ជូនរហ័ស។" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Top Scroll Bar -->
+    <div id="scroll-bar"></div>
+
+    <!-- ANNOUNCEMENT -->
+    <div class="announce">
+        <div class="announce-inner">
+            <span class="announce-badge">ការផ្តល់ជូន</span>
+            <span>ប្តូរទូរស័ព្ទចាស់ទទួលបានបញ្ចុះតម្លៃរហូតដល់ $150 · ធានាដើម ១ឆ្នាំពេញលេញ</span>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-inner">
+            <a href="#" class="brand">
+                <div class="brand-mark">📱</div>
+                <div>
+                    <span class="brand-name">HENGSHOP</span>
+                    <span class="brand-tag">ទូរស័ព្ទឆ្លាតវៃ & គ្រឿងបន្លាស់ដើម</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#catalog">ប្រភេទទូរស័ព្ទ</a>
+                <a href="#configurator">កំណត់ម៉ូដែលផ្ទាល់ខ្លួន</a>
+                <a href="#specs">បច្ចេកវិទ្យា</a>
+                <a href="#story">អំពីយើង</a>
+                <a href="#reviews">មតិអតិថិជន</a>
+                <a href="#visit">ហាង & ទីតាំង</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-btn" onclick="openCart()" aria-label="កន្ត្រកទំនិញ">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </button>
+
+                <a href="#configurator" class="btn btn-primary nav-cta">កំណត់ម៉ូដែលផ្ទាល់ខ្លួន</a>
+
+                <button class="mobile-toggle" onclick="openMobileNav()" aria-label="ម៉ឺនុយ">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE DRAWER -->
+    <aside class="mnav" id="mnav">
+        <button class="mnav-close" onclick="closeMobileNav()">&times;</button>
+        <div class="brand">
+            <div class="brand-mark">📱</div>
+            <div><span class="brand-name">HENGSHOP</span></div>
+        </div>
+        <a href="#catalog" onclick="closeMobileNav()">ប្រភេទទូរស័ព្ទ</a>
+        <a href="#configurator" onclick="closeMobileNav()">កំណត់ម៉ូដែលផ្ទាល់ខ្លួន</a>
+        <a href="#specs" onclick="closeMobileNav()">បច្ចេកវិទ្យា</a>
+        <a href="#story" onclick="closeMobileNav()">អំពីយើង</a>
+        <a href="#reviews" onclick="closeMobileNav()">មតិអតិថិជន</a>
+        <a href="#visit" onclick="closeMobileNav()">ហាង & ទីតាំង</a>
+        <a href="#configurator" class="btn btn-primary" onclick="closeMobileNav()"
+            style="margin-top:auto; justify-content:center;">
+            កំណត់ម៉ូដែលផ្ទាល់ខ្លួន
+        </a>
+    </aside>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <span class="eyebrow">🔋 ស្តុកថ្មីរៀងរាល់សប្តាហ៍</span>
+                    <h1 class="hero-title">ទូរស័ព្ទដែលអ្នកនឹងប្រើប្រចាំថ្ងៃ <span class="glow">មិនប្តូរចិត្ត</span></h1>
+                    <p class="hero-desc">
+                        លក់ទូរស័ព្ទឆ្លាតវៃដើមទាំងអស់ ធានាកម្មសិទ្ធិត្រឹមត្រូវ ថ្មសុខភាពពេញ១០០%
+                        និងសេវាកំណត់ម៉ូដែលតាមតម្រូវការ ចាប់ពីទំហំផ្ទុក ពណ៌ រហូតដល់សំបកការពារ។
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#catalog" class="btn btn-primary"><span>មើលកាតាឡុកទូរស័ព្ទ</span></a>
+                        <a href="#configurator" class="btn btn-ghost"><span>🛠 កំណត់ម៉ូដែលផ្ទាល់ខ្លួន</span></a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hstat"><b>4.9/5</b><span>ការវាយតម្លៃ ៣,១០០+</span></div>
+                        <div class="hstat"><b>100%</b><span>ធានាដើម & មានវិក្កយបត្រ</span></div>
+                        <div class="hstat"><b>24ម៉ោង</b><span>ដឹកជញ្ជូនក្នុងក្រុង</span></div>
+                    </div>
+                </div>
+
+                <div class="phone-stage">
+                    <div class="phone-glow"></div>
+                    <div class="phone-mock">
+                        <div class="phone-screen">
+                            <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-16-pro.jpg"
+                                alt="iPhone 16 Pro Flagship" class="hero-phone-img" />
+                            <div class="phone-notch" style="z-index: 2;"></div>
+                            <div class="phone-price-chip" style="z-index: 2;"><small>ចាប់ផ្តើមតែ</small>$699</div>
+                        </div>
+                    </div>
+                    <div class="float-badge badge-a">
+                        <span class="ic">🛡️</span>
+                        <div>
+                            <div style="font-weight:700;">ធានា ១ឆ្នាំ</div>
+                            <div style="color:var(--muted); font-size:.74rem;">គ្រប់ម៉ូដែល</div>
+                        </div>
+                    </div>
+                    <div class="float-badge badge-b">
+                        <span class="ic">🔄</span>
+                        <div>
+                            <div style="font-weight:700;">ប្តូរបានក្នុង ១៤ថ្ងៃ</div>
+                            <div style="color:var(--muted); font-size:.74rem;">មិនពេញចិត្តសង​ប្រាក់វិញ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATALOG -->
+        <section class="catalog" id="catalog">
+            <div class="container">
+                <div class="cat-head">
+                    <div>
+                        <span class="tagline">ប្រភេទទូរស័ព្ទ</span>
+                        <h2 class="sec-title">ជ្រើសរើសម៉ូដែលដែលត្រូវនឹងការប្រើប្រាស់អ្នក</h2>
+                        <p class="sec-desc">ទូរស័ព្ទគ្រប់ម៉ូដែលត្រូវបានពិនិត្យលក្ខណៈបច្ចេកទេស ១៨ ចំណុច មុននឹងចេញលក់។</p>
+                    </div>
+                    <div class="search-wrap">
+                        <span>🔍</span>
+                        <input type="text" id="catalog-search" placeholder="ស្វែងរកម៉ូដែល ឬម៉ាក..." />
+                    </div>
+                </div>
+
+                <div class="pills" id="pills">
+                    <button class="pill active" data-cat="all" onclick="setFilter('all')">ម៉ូដែលទាំងអស់ (7)</button>
+                    <button class="pill" data-cat="flagship" onclick="setFilter('flagship')">លំដាប់ខ្ពស់
+                        (Flagship)</button>
+                    <button class="pill" data-cat="mid" onclick="setFilter('mid')">តម្លៃសមរម្យ</button>
+                    <button class="pill" data-cat="accessory" onclick="setFilter('accessory')">គ្រឿងបន្លាស់</button>
+                </div>
+
+                <div class="grid" id="products-grid"></div>
+            </div>
+        </section>
+
+        <section id="configurator">
+            <div class="container">
+                <div style="max-width:680px; margin:0 auto 46px; text-align:center;">
+                    <span class="tagline">សេវាកំណត់ម៉ូដែលផ្ទាល់ខ្លួន</span>
+                    <h2 class="sec-title" style="margin-left:auto; margin-right:auto;">
+                        កសាងទូរស័ព្ទក្នុងបំណងប្រាថ្នារបស់អ្នក</h2>
+                    <p class="sec-desc" style="margin:0 auto;">ជ្រើសរើសម៉ូដែល ទំហំផ្ទុក ពណ៌ សំបកការពារ
+                        និងសារដុតឈ្មោះលើប្រអប់ ព្រមទាំងមើលតម្លៃពិតប្រាកដភ្លាមៗ។</p>
+                </div>
+
+                <div class="config-wrap">
+                    <div class="config-stage">
+                        <div class="stage-tag"><span class="dot"></span>រូបភាពបង្ហាញផ្ទាល់</div>
+                        <div class="config-phone" id="cfg-phone">
+                            <div class="config-screen" id="cfg-screen">
+                                <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-16-pro.jpg"
+                                    id="cfg-phone-img" class="config-phone-img" alt="Configured Phone" />
+                                <div class="engrave-line" id="cfg-engrave" style="position:relative; z-index:2;">🎁
+                                    រីករាយថ្ងៃកំណើត!</div>
+                            </div>
+                        </div>
+                        <div class="stage-summary">
+                            <div>
+                                <span class="stage-price-label">តម្លៃប៉ាន់ស្មានសរុប</span>
+                                <span class="stage-price" id="cfg-price">$999</span>
+                            </div>
+                            <button class="btn btn-primary" onclick="addCustomToCart()">
+                                <span>បញ្ចូលកន្ត្រកទំនិញ ✓</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="config-tabs">
+                            <button class="ctab active" data-step="1" onclick="switchStep(1)">១. ម៉ូដែល</button>
+                            <button class="ctab" data-step="2" onclick="switchStep(2)">២. ទំហំផ្ទុក</button>
+                            <button class="ctab" data-step="3" onclick="switchStep(3)">៣. ពណ៌</button>
+                            <button class="ctab" data-step="4" onclick="switchStep(4)">៤. សំបកការពារ</button>
+                            <button class="ctab" data-step="5" onclick="switchStep(5)">៥. សារលើប្រអប់</button>
+                        </div>
+
+                        <!-- STEP 1 -->
+                        <div class="cpanel active" data-panel="1">
+                            <h3>ជ្រើសរើសម៉ូដែលទូរស័ព្ទ</h3>
+                            <p class="hint">តម្លៃមូលដ្ឋានផ្អែកលើសមត្ថភាពនៃឈីប និងកាមេរ៉ា។</p>
+                            <div class="opt-grid">
+                                <div class="opt selected" data-val="iphone16pro"
+                                    onclick="pick('model','iphone16pro',999,{name:'iPhone 16 Pro',img:'https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-16-pro.jpg'})">
+                                    <div class="opt-title">iPhone 16 Pro</div>
+                                    <div class="opt-desc">ឈីប A18 Pro អេក្រង់ ProMotion 120Hz កាមេរ៉ា ៤៨MP ៣ ជ្រុង។
+                                    </div>
+                                    <span class="opt-price">$999</span>
+                                </div>
+                                <div class="opt" data-val="s25ultra"
+                                    onclick="pick('model','s25ultra',1049,{name:'Galaxy S24 Ultra',img:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlk1ubdRL-odwodmYvi0w_J985LaTCNjGrn5QHP48ZCntlkNmE9zu0dqlw&s=10'})">
+                                    <div class="opt-title">Samsung Galaxy S24 Ultra</div>
+                                    <div class="opt-desc">ប៊ិច S Pen ភ្ជាប់មកជាមួយ អេក្រង់ ៦.៨\" Dynamic AMOLED 2X។
+                                    </div>
+                                    <span class="opt-price">$1,049</span>
+                                </div>
+                                <div class="opt" data-val="pixel9pro"
+                                    onclick="pick('model','pixel9pro',899,{name:'Google Pixel 9 Pro',img:'https://media-ik.croma.com/Croma%20Assets/Communication/Mobiles/Images/309165_0_gvylu0.png'})">
+                                    <div class="opt-title">Google Pixel 9 Pro</div>
+                                    <div class="opt-desc">កាមេរ៉ា AI កែច្នៃរូបភាពឆ្នើម និងទទួលបាន Android ថ្មីមុនគេ។
+                                    </div>
+                                    <span class="opt-price">$899</span>
+                                </div>
+                                <div class="opt" data-val="oneplus13"
+                                    onclick="pick('model','oneplus13',749,{name:'OnePlus 13',img:'https://fdn2.gsmarena.com/vv/bigpic/oneplus-13.jpg'})">
+                                    <div class="opt-title">OnePlus 13</div>
+                                    <div class="opt-desc">សាកថ្មលឿន ១០០W ថាមពលថ្មធំ ត្រឹមតែ ១៨នាទីពេញ ១០០%។</div>
+                                    <span class="opt-price">$749</span>
+                                </div>
+                            </div>
+                            <div class="cfoot">
+                                <span></span>
+                                <button class="btn btn-dark" onclick="switchStep(2)">បន្ទាប់: ទំហំផ្ទុក →</button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 2 -->
+                        <div class="cpanel" data-panel="2">
+                            <h3>ជ្រើសរើសទំហំផ្ទុកទិន្នន័យ</h3>
+                            <p class="hint">ទំហំកាន់តែធំ ថតវីដេអូ 4K និងទុករូបភាពបានកាន់តែច្រើន។</p>
+                            <div class="opt-grid">
+                                <div class="opt selected" data-val="128" onclick="pick('storage','128',0)">
+                                    <div class="opt-title">128GB</div>
+                                    <div class="opt-desc">សម្រាប់ការប្រើប្រាស់ធម្មតា ១–២ ឆ្នាំ។</div>
+                                    <span class="opt-price">+$0</span>
+                                </div>
+                                <div class="opt" data-val="256" onclick="pick('storage','256',80)">
+                                    <div class="opt-title">256GB</div>
+                                    <div class="opt-desc">សមតុល្យល្អសម្រាប់រូបថត និងកម្មវិធីច្រើន។</div>
+                                    <span class="opt-price">+$80</span>
+                                </div>
+                                <div class="opt" data-val="512" onclick="pick('storage','512',200)">
+                                    <div class="opt-title">512GB</div>
+                                    <div class="opt-desc">សម្រាប់អ្នកថតវីដេអូញឹកញាប់ ឬចូលចិត្តលេងហ្គេម។</div>
+                                    <span class="opt-price">+$200</span>
+                                </div>
+                                <div class="opt" data-val="1tb" onclick="pick('storage','1tb',380)">
+                                    <div class="opt-title">1TB</div>
+                                    <div class="opt-desc">ទំហំអតិបរមាសម្រាប់អ្នកកសាងមាតិកា។</div>
+                                    <span class="opt-price">+$380</span>
+                                </div>
+                            </div>
+                            <div class="cfoot">
+                                <button class="btn btn-ghost" onclick="switchStep(1)">← ថយក្រោយ</button>
+                                <button class="btn btn-dark" onclick="switchStep(3)">បន្ទាប់: ពណ៌ →</button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 3 -->
+                        <div class="cpanel" data-panel="3">
+                            <h3>ជ្រើសរើសពណ៌ខាងក្រៅ</h3>
+                            <p class="hint">ស្រទាប់ក្រៅធន់ស្នាមប្រឡាក់ដៃ និងស្នាមឆូត។</p>
+                            <div class="opt-grid">
+                                <div class="opt selected" data-val="titanium"
+                                    onclick="pick('color','titanium',0,{bg:'linear-gradient(200deg,#1e1b4b,#0f172a 70%)'})">
+                                    <div class="swatch" style="background:#4b5259;"></div>
+                                    <div class="opt-title">តាយតានៀមធម្មជាតិ</div>
+                                    <div class="opt-desc">ពណ៌ស្រអាប់ស្អាតបែបលោហៈ។</div>
+                                    <span class="opt-price">+$0</span>
+                                </div>
+                                <div class="opt" data-val="midnight"
+                                    onclick="pick('color','midnight',0,{bg:'linear-gradient(200deg,#141625,#0a1113 60%)'})">
+                                    <div class="swatch" style="background:#171a26;"></div>
+                                    <div class="opt-title">ខ្មៅរាត្រី (Midnight)</div>
+                                    <div class="opt-desc">ពណ៌ខ្មៅជ្រៅបែបប្រណីត។</div>
+                                    <span class="opt-price">+$0</span>
+                                </div>
+                                <div class="opt" data-val="aurora"
+                                    onclick="pick('color','aurora',20,{bg:'linear-gradient(200deg,#123f40,#0a1113 60%)'})">
+                                    <div class="swatch" style="background:#1f8f83;"></div>
+                                    <div class="opt-title">ពណ៌បៃតងសមុទ្រ (Aurora)</div>
+                                    <div class="opt-desc">ពណ៌ពិសេសកម្រិតកំណត់។</div>
+                                    <span class="opt-price">+$20</span>
+                                </div>
+                                <div class="opt" data-val="rose"
+                                    onclick="pick('color','rose',20,{bg:'linear-gradient(200deg,#3f1f2a,#0a1113 60%)'})">
+                                    <div class="swatch" style="background:#8f3a55;"></div>
+                                    <div class="opt-title">ពណ៌កុលាបមាស</div>
+                                    <div class="opt-desc">ពណ៌ពិសេសកម្រិតកំណត់។</div>
+                                    <span class="opt-price">+$20</span>
+                                </div>
+                            </div>
+                            <div class="cfoot">
+                                <button class="btn btn-ghost" onclick="switchStep(2)">← ថយក្រោយ</button>
+                                <button class="btn btn-dark" onclick="switchStep(4)">បន្ទាប់: សំបកការពារ →</button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 4 -->
+                        <div class="cpanel" data-panel="4">
+                            <h3>បន្ថែមសំបកការពារ & គ្រឿងបន្លាស់</h3>
+                            <p class="hint">ការពារទូរស័ព្ទរបស់អ្នកតាំងពីថ្ងៃដំបូង។</p>
+                            <div class="opt-grid">
+                                <div class="opt selected" data-val="none" onclick="pick('acc','none',0)">
+                                    <div class="opt-title">មិនបន្ថែម</div>
+                                    <div class="opt-desc">ខ្ញុំមានសំបកការពាររួចហើយ។</div>
+                                    <span class="opt-price">+$0</span>
+                                </div>
+                                <div class="opt" data-val="case" onclick="pick('acc','case',25)">
+                                    <div class="opt-title">សំបកការពារកញ្ចក់ថ្មដក់</div>
+                                    <div class="opt-desc">ការពារការធ្លាក់ពីកម្ពស់ដល់ ២ម៉ែត្រ។</div>
+                                    <span class="opt-price">+$25</span>
+                                </div>
+                                <div class="opt" data-val="glass" onclick="pick('acc','glass',18)">
+                                    <div class="opt-title">កញ្ចក់ការពារអេក្រង់</div>
+                                    <div class="opt-desc">កញ្ចក់ Tempered ធន់ស្នាមឆូត។</div>
+                                    <span class="opt-price">+$18</span>
+                                </div>
+                                <div class="opt" data-val="bundle" onclick="pick('acc','bundle',55)">
+                                    <div class="opt-title">កញ្ចប់ពេញលេញ (សំបក+កញ្ចក់+ខ្សែសាក)</div>
+                                    <div class="opt-desc">សន្សំជាង ១៥% ធៀបនឹងទិញដាច់ដាច់។</div>
+                                    <span class="opt-price">+$55</span>
+                                </div>
+                            </div>
+                            <div class="cfoot">
+                                <button class="btn btn-ghost" onclick="switchStep(3)">← ថយក្រោយ</button>
+                                <button class="btn btn-dark" onclick="switchStep(5)">បន្ទាប់: សារលើប្រអប់ →</button>
+                            </div>
+                        </div>
+
+                        <!-- STEP 5 -->
+                        <div class="cpanel" data-panel="5">
+                            <h3>សរសេរសារផ្ទាល់ខ្លួនលើប្រអប់អំណោយ</h3>
+                            <p class="hint">សារនេះនឹងត្រូវបានបោះពុម្ពលើកាតដាក់ក្នុងប្រអប់។</p>
+                            <label class="field-note"
+                                style="display:block; margin-bottom:8px; color:#475569; font-weight:600;">សារជូនពរ
+                                (អតិបរមា ៣០ តួអក្សរ)</label>
+                            <input type="text" class="engrave-input" id="engrave-input" maxlength="30"
+                                value="រីករាយថ្ងៃកំណើត!" oninput="updateEngrave()"
+                                placeholder="ឧ. សូមឱ្យការងារកាន់តែងាយស្រួល" />
+                            <p class="field-note">សារនេះមិនប៉ះពាល់ដល់ខ្លួនទូរស័ព្ទទេ។</p>
+
+                            <div class="perk-box">
+                                <strong>រួមបញ្ចូលឥតគិតថ្លៃ៖</strong><br />
+                                ✓ ប្រអប់ដើមពីរោងចក្រ ព្រមភ្ជាប់លេខស៊េរីត្រឹមត្រូវ<br />
+                                ✓ ការធានា ១ ឆ្នាំពេញ + ការគាំទ្របច្ចេកទេស ២៤/៧<br />
+                                ✓ ខ្សែសាកលឿន & ការផ្ទេរទិន្នន័យពីទូរស័ព្ទចាស់
+                            </div>
+                            <div class="cfoot">
+                                <button class="btn btn-ghost" onclick="switchStep(4)">← ថយក្រោយ</button>
+                                <button class="btn btn-primary" onclick="addCustomToCart()">បញ្ចូលកន្ត្រកទំនិញ
+                                    ✓</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPECS GUIDE -->
+        <section id="specs"
+            style="background:#ffffff; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+            <div class="container">
+                <div style="max-width:600px; margin:0 auto 10px; text-align:center;">
+                    <span class="tagline">បច្ចេកវិទ្យាដែលអ្នកកំពុងទិញ</span>
+                    <h2 class="sec-title" style="margin-left:auto; margin-right:auto;">សិល្បៈនៃឈីប អេក្រង់ និងកាមេរ៉ា
+                    </h2>
+                    <p class="sec-desc" style="margin:0 auto;">យើងជ្រើសរើសលក់តែម៉ូដែលមានផ្នែករឹងគួរឱ្យទុកចិត្ត
+                        និងទទួលបានបច្ចេកទេសទាន់សម័យ។</p>
+                </div>
+                <div class="spec-grid">
+                    <div class="spec-card">
+                        <div class="spec-ic">🧠</div>
+                        <h3>ឈីបដំណើរការលឿន</h3>
+                        <p>ឈីបជំនាន់ចុងក្រោយផ្តល់ការដំណើរការកម្មវិធីធ្ងន់ៗ និងហ្គេមបានរលូនដោយគ្មានកម្តៅខ្លាំង។</p>
+                        <div class="tag-row"><span class="mini-tag">5nm+</span><span class="mini-tag">AI-ready</span>
+                        </div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-ic">🖥️</div>
+                        <h3>អេក្រង់ភាពស្រស់ខ្ពស់</h3>
+                        <p>អេក្រង់ OLED ភាពស្គាល់ពណ៌ត្រឹមត្រូវ អត្រា refresh រហូតដល់ 120Hz
+                            មើលក្រៅផ្ទះកម្រិតពន្លឺខ្ពស់ច្បាស់។</p>
+                        <div class="tag-row"><span class="mini-tag">120Hz</span><span class="mini-tag">HDR10+</span>
+                        </div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-ic">📷</div>
+                        <h3>ប្រព័ន្ធកាមេរ៉ាច្រើនជ្រុង</h3>
+                        <p>ឡង់ធំទូលាយ ជិត និងអេក្រង់ទូលំទូលាយ ថតបានច្បាស់ទាំងពេលថ្ងៃ និងពេលយប់។</p>
+                        <div class="tag-row"><span class="mini-tag">48MP</span><span class="mini-tag">Night mode</span>
+                        </div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-ic">🔋</div>
+                        <h3>ថ្មធន់ & សាកលឿន</h3>
+                        <p>ថមធន់រយៈពេលមួយថ្ងៃពេញ ជាមួយបច្ចេកវិទ្យាសាកលឿនកាត់បន្ថយពេលឧស្សាហ៍រង់ចាំ។</p>
+                        <div class="tag-row"><span class="mini-tag">4500mAh+</span><span class="mini-tag">Fast
+                                charge</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STORY -->
+        <section class="story" id="story">
+            <div class="container story-grid">
+                <div>
+                    <span class="tagline">អំពី HENGSHOP</span>
+                    <h2 class="sec-title">លក់ទូរស័ព្ទដោយភាពស្មោះត្រង់ តាំងពីឆ្នាំ 2019</h2>
+                    <p class="story-desc">
+                        HENGSHOP បង្កើតឡើងដោយក្រុមអ្នកជំនាញផ្នែកបច្ចេកវិទ្យា
+                        ដែលធុញនឹងការទិញទូរស័ព្ទដោយមិនច្បាស់ប្រភពដើម។ យើងផ្ទៀងផ្ទាត់ IMEI លេខស៊េរី
+                        និងសុខភាពថ្មរបស់ទូរស័ព្ទគ្រប់គ្រឿង មុននឹងដាក់លក់។
+                    </p>
+                    <p class="story-desc">
+                        ក្រុមជំនួយបច្ចេកទេសរបស់យើងផ្តល់ការប្រឹក្សាដោយឥតគិតថ្លៃ ជួយអ្នកជ្រើសរើសម៉ូដែលដែលសមនឹងថវិកា
+                        និងតម្រូវការជាក់ស្តែង មិនមែនគ្រាន់តែលក់ម៉ូដែលថ្លៃបំផុតឡើយ។
+                    </p>
+                    <div class="story-stats">
+                        <div><b>18ចំណុច</b><span>ការត្រួតពិនិត្យគុណភាព</span></div>
+                        <div><b>6ឆ្នាំ</b><span>បទពិសោធន៍ក្នុងឧស្សាហកម្ម</span></div>
+                        <div><b>40k+</b><span>អតិថិជនទុកចិត្ត</span></div>
+                    </div>
+                </div>
+                <div class="quote-box">
+                    <div class="quote-mark">"</div>
+                    <p class="quote-text">
+                        ទូរស័ព្ទល្អមួយគ្រឿង មិនមែនគ្រាន់តែជាបច្ចេកវិទ្យានោះទេ
+                        វាជាឧបករណ៍ភ្ជាប់អ្នកទៅនឹងអ្វីៗសំខាន់ក្នុងជីវិតប្រចាំថ្ងៃ។
+                        យើងចង់ឱ្យអតិថិជនទុកចិត្តរាល់ការទិញរបស់ពួកគេ។
+                    </p>
+                    <div class="author-row">
+                        <div class="avatar">RS</div>
+                        <div>
+                            <div class="author-name">Ravi Serey</div>
+                            <div class="author-role">សហស្ថាបនិក & ប្រធានផ្នែកបច្ចេកទេស</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWS -->
+        <section id="reviews">
+            <div class="container">
+                <div style="max-width:600px; margin:0 auto; text-align:center;">
+                    <span class="tagline">ការទុកចិត្តពីអតិថិជន</span>
+                    <h2 class="sec-title" style="margin-left:auto; margin-right:auto;">អតិថិជនពិតប្រាកដនិយាយអំពីយើង</h2>
+                </div>
+                <div class="rev-grid">
+                    <div class="rev-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="rev-quote">"ខ្ញុំកំណត់ម៉ូដែល iPhone 16 Pro ជ្រើសពណ៌ Aurora ដឹកមកដល់ក្នុងរយៈពេលមួយថ្ងៃ។
+                            ថ្មនៅ 100% សុខភាព ដូចប្រកាសពិតៗ!"</p>
+                        <div class="rev-user">
+                            <div class="avatar">SL</div>
+                            <div>
+                                <h4>IM EKASITH</h4><span>អតិថិជនពិតប្រាកដ · Phnom Penh</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rev-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="rev-quote">"ក្រុមហ៊ុនបានផ្ទៀងផ្ទាត់ IMEI ជាមុនអោយខ្ញុំមើលផងមុនកម្ម៉ង់
+                            ធ្វើឱ្យខ្ញុំទុកចិត្តខ្លាំង។ សំបកការពារកញ្ចប់ពេញក៏ស័ក្តិសមថ្លៃដែរ។"</p>
+                        <div class="rev-user">
+                            <div class="avatar">DK</div>
+                            <div>
+                                <h4>Kim Thong</h4><span>អតិថិជនពិតប្រាកដ · Phnom Penh</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rev-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="rev-quote">
+                            "សេវាកំណត់ម៉ូដែលផ្ទាល់ខ្លួនធ្វើឱ្យខ្ញុំចេះជ្រើសរើសទំហំផ្ទុកបានត្រឹមត្រូវតាមតម្រូវការការងារ។
+                            ក្រុមជំនួយឆ្លើយតបលឿនណាស់។"</p>
+                        <div class="rev-user">
+                            <div class="avatar">PV</div>
+                            <div>
+                                <h4>Chea Sokneangn</h4><span>អតិថិជនពិតប្រាកដ · Phnom Penh</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISIT / FAQ -->
+        <section id="visit" style="background:#ffffff; border-top:1px solid var(--border);">
+            <div class="container visit-grid">
+                <div class="store-card">
+                    <span class="tagline">ទស្សនាហាងរបស់យើង</span>
+                    <h3>ហាង & មជ្ឈមណ្ឌលសេវាកម្ម</h3>
+                    <p style="color:#64748b; font-size:.94rem; margin-bottom:24px;">
+                        អញ្ជើញមកសាកល្បងទូរស័ព្ទដោយផ្ទាល់ដៃ ពិគ្រោះជាមួយអ្នកជំនាញ ឬមកទទួលការកម្ម៉ង់ដែលបានកក់ទុកមុន។
+                    </p>
+                    <div class="store-row">
+                        <div class="store-ic">📍</div>
+                        <div>
+                            <h4>អាសយដ្ឋានហាង</h4>
+                            <p>ជាន់ទី១ អគារ masonheng, St. 592, Phnom Penh</p>
+                        </div>
+                    </div>
+                    <div class="store-row">
+                        <div class="store-ic">⏰</div>
+                        <div>
+                            <h4>ម៉ោងបើកបម្រើការងារ</h4>
+                            <p>ចន្ទ – សៅរ៍៖ ៩:០០ ព្រឹក – ៨:០០ យប់</p>
+                        </div>
+                    </div>
+                    <div class="store-row">
+                        <div class="store-ic">📞</div>
+                        <div>
+                            <h4>ទំនាក់ទំនង​តាមលេខទូរស័ព្ទនឺងអុីមែល</h4>
+                            <p>sankimheng431@gmail.com · +855 88 540 7297</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <span class="tagline">សំណួរញឹកញាប់</span>
+                    <h3 style="font-size:1.5rem; color:#0f172a; font-weight:800; margin:8px 0 20px;">
+                        អ្វីៗដែលអ្នកគួរដឹងមុនកម្ម៉ង់</h3>
+                    <div id="faq-list">
+                        <div class="faq-item open">
+                            <button class="faq-q" onclick="toggleFaq(this)">
+                                <span>ភ្ជាប់មកជាមួយធានាប៉ុន្មាន?</span>
+                                <span class="faq-icon">−</span>
+                            </button>
+                            <div class="faq-a">
+                                ទូរស័ព្ទគ្រប់ម៉ូដែលមានធានា ១ ឆ្នាំពេញលេញ គ្របដណ្តប់បញ្ហាផ្នែករឹងទាំងអស់
+                                លើកលែងការខូចខាតដោយចៃដន្យ។ អាចទិញធានាបន្ថែមបានពេលទូទាត់ប្រាក់។
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-q" onclick="toggleFaq(this)">
+                                <span>តើអាចផ្ទេរទិន្នន័យពីទូរស័ព្ទចាស់បានទេ?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-a">
+                                បាទ/ចាស អាចធ្វើបាន។ ក្រុមជំនួយបច្ចេកទេសរបស់យើងជួយផ្ទេររូបភាព ទំនាក់ទំនង
+                                និងកម្មវិធីដោយឥតគិតថ្លៃ នៅពេលមកទទួលទំនិញនៅហាង។
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-q" onclick="toggleFaq(this)">
+                                <span>តើទូរស័ព្ទទាំងអស់ជាដើមឬ?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-a">
+                                គ្រប់ម៉ូដែលទាំងអស់ជាទំនិញដើម ១០០% ត្រូវបានផ្ទៀងផ្ទាត់ IMEI
+                                និងលេខស៊េរីជាមួយក្រុមហ៊ុនផលិតដើម មុននឹងដាក់លក់។
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-q" onclick="toggleFaq(this)">
+                                <span>តើទទួលយកការប្តូរទូរស័ព្ទចាស់ (Trade-in) ទេ?</span>
+                                <span class="faq-icon">+</span>
+                            </button>
+                            <div class="faq-a">
+                                បាទ/ចាស យើងវាយតម្លៃទូរស័ព្ទចាស់របស់អ្នកភ្លាមៗនៅហាង
+                                ហើយកាត់បញ្ចុះតម្លៃដោយផ្ទាល់លើការកម្ម៉ង់ថ្មី។
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="foot-top">
+                <div>
+                    <div class="brand" style="margin-bottom:14px;">
+                        <div class="brand-mark">📱</div>
+                        <div>
+                            <span class="brand-name" style="color:#ffffff;">HENGSHOP</span>
+                            <span class="brand-tag" style="color:#38bdf8;">ទូរស័ព្ទឆ្លាតវៃ & គ្រឿងបន្លាស់ដើម</span>
+                        </div>
+                    </div>
+                    <p style="line-height:1.75;">ទូរស័ព្ទដើម ១០០% ធានាជឿទុកចិត្តបាន
+                        និងសេវាកំណត់ម៉ូដែលផ្ទាល់ខ្លួនតាមតម្រូវការជាក់ស្តែងរបស់អ្នក。</p>
+                </div>
+
+                <div>
+                    <h4 class="foot-title">មាតិកា</h4>
+                    <ul class="foot-links">
+                        <li><a href="#catalog">កាតាឡុកទូរស័ព្ទ</a></li>
+                        <li><a href="#configurator">កំណត់ម៉ូដែលផ្ទាល់ខ្លួន</a></li>
+                        <li><a href="#specs">មគ្គុទ្ទេសក៍បច្ចេកវិទ្យា</a></li>
+                        <li><a href="#story">អំពីយើង</a></li>
+                        <li><a href="#visit">ហាង & ទីតាំង</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="foot-title">សេវាកម្ម</h4>
+                    <ul class="foot-links">
+                        <li><a href="#configurator">ការកំណត់ម៉ូដែលថ្មី</a></li>
+                        <li><a href="#visit">ការប្តូរទូរស័ព្ទចាស់</a></li>
+                        <li><a href="#catalog">គ្រឿងបន្លាស់ដើម</a></li>
+                        <li><a href="#visit">សេវាជួសជុល</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="foot-title">ក្លឹបព័ត៌មានថ្មី</h4>
+                    <p>ចុះឈ្មោះដើម្បីទទួលព័ត៌មានម៉ូដែលថ្មី និងការបញ្ចុះតម្លៃមុនគេ។</p>
+                    <form class="news-form" onsubmit="handleNewsletter(event)">
+                        <input type="email" required placeholder="អ៊ីមែលរបស់អ្នក" />
+                        <button type="submit" class="btn btn-primary"
+                            style="padding:9px 16px; font-size:.82rem;">ចុះឈ្មោះ</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="foot-bottom">
+                <div>© 2026 HENGSHOP Mobile Shop. រក្សាសិទ្ធិគ្រប់យ៉ាង។</div>
+                <div style="display:flex; gap:18px;">
+                    <a href="#">គោលការណ៍ឯកជនភាព</a>
+                    <a href="#">លក្ខខណ្ឌប្រើប្រាស់</a>
+                    <a href="#">គោលការណ៍ធានា</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CART DRAWER -->
+    <div class="overlay" id="cart-overlay" onclick="closeCart()"></div>
+    <aside class="drawer" id="cart-drawer">
+        <div class="drawer-head">
+            <h3>កន្ត្រកទំនិញ</h3>
+            <button class="drawer-close" onclick="closeCart()">&times;</button>
+        </div>
+        <div class="drawer-items" id="cart-items"></div>
+        <div class="drawer-foot">
+            <div class="foot-row">
+                <span>តម្លៃទំនិញសរុប</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="foot-row total">
+                <span>តម្លៃសរុបទាំងអស់</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button class="btn btn-primary" style="width:100%; justify-content:center; margin-top:12px;"
+                onclick="openCheckout()">
+                បន្តទៅការទូទាត់ប្រាក់ →
+            </button>
+        </div>
+    </aside>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal-overlay" id="checkout-modal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeCheckout()">&times;</button>
+            <div style="text-align:center; padding-top:14px;">
+                <div style="font-size:2.4rem; margin-bottom:10px;">✅</div>
+                <h3 style="margin:0 0 8px; color:#0f172a; font-weight:800;">អរគុណសម្រាប់ការកម្ម៉ង់!</h3>
+                <p style="color:#64748b; font-size:.92rem; line-height:1.7;">
+                    នេះជាការសាកល្បងបង្ហាញប៉ុណ្ណោះ។ ក្រុមការងាររបស់យើងនឹងទាក់ទងអ្នកវិញក្នុងពេលឆាប់ៗ
+                    ដើម្បីបញ្ជាក់ការទូទាត់ប្រាក់ជាក់ស្តែង។
+                </p>
+                <button class="btn btn-primary" style="margin-top:20px;" onclick="closeCheckout()">
+                    យល់ព្រម
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST WRAPPER -->
+    <div class="toast-wrap" id="toast-wrap"></div>
+
+    <!-- FLOATING CONTACT BUTTON -->
+    <a href="tel:+855885407297" class="fab" title="ទាក់ទងមកយើង" aria-label="ទាក់ទងមកយើង">📞</a>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script src="script.js"></script>
+</body>
+
+</html>
